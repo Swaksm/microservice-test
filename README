@@ -1,0 +1,17 @@
+postman request POST 'http://localhost:5003/payment/initiate' \
+  --header 'Content-Type: application/json' \
+  --body '{
+    "user_id": "user_123",
+    "event_id": "event_99",
+    "amount": 50.0,
+    "currency": "EUR"
+}'
+ 
+postman request 'http://localhost:5003/payment/status/58897eeb-c0c9-4c22-a0a0-f7becab509c1'
+ 
+postman request POST 'http://localhost:5003/payment/webhook' \
+  --header 'Content-Type: application/json' \
+  --body '{
+    "transaction_id": "58897eeb-c0c9-4c22-a0a0-f7becab509c1"
+}'
+ 
