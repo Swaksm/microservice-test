@@ -5,9 +5,7 @@ from payment_service import PaymentService
 
 app = Flask(__name__)
 
-# --- Injection des dépendances ---
-# On instancie les couches ici pour que le contrôleur puisse les utiliser.
-# Dans une application plus complexe, on utiliserait un framework d'injection de dépendances.
+
 payment_repository = PaymentRepository()
 payment_service = PaymentService(payment_repository)
 
